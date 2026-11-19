@@ -63,7 +63,7 @@ console.log(message);
 
 if (values.post) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-  if (!webhookUrl) throw new Error('DISCORD_WEBHOOK_URL が設定されていません（.env を確認してください）');
+  if (!webhookUrl) throw new Error('DISCORD_WEBHOOK_URL が設定されていません（手元では .env、GitHub Actions では Secrets を確認してください）');
   await postToDiscord(webhookUrl, message);
   console.log('\n✅ Discord に投稿しました');
 }
