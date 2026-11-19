@@ -1,4 +1,4 @@
-# 人気記事を Discord に流す
+# Tech News bot テンプレ
 
 Qiita の人気記事を3件取ってきて、Discord に投稿するプログラム
 
