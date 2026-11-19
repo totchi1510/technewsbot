@@ -1,0 +1,21 @@
+# GitHub 上でプログラムを動かす設定（Actions タブ → post → Run workflow）
+name: post
+
+on:
+  workflow_dispatch: # 手動実行ボタン
+  # 定期実行したいときは、下の2行の先頭の # を外す（例: 毎週月曜 12:00 日本時間 = 3:00 UTC）
+  # schedule:
+  #   - cron: '0 3 * * 1'
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run post
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          YOUR_NAME: ${{ github.actor }}

@@ -1,0 +1,12 @@
+{
+  "name": "helloai-handson-template",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "preview": "node src/main.ts",
+    "post": "node --env-file-if-exists=.env src/main.ts --post"
+  }
+}
